@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/profile.css">
+    <link rel="stylesheet" href="/stylesheets/navbar.css">
+</head>
+<body>
+    <nav>
+        <div class="menu">
+    <div class="logo">
+            <a href="/"><img src="/images/logo.png" alt="Logo"></a>
+        </div>
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/gallery">Gallery</a></li>
+            <li><a href="/book">Book Now</a></li>
+            <div class="dropdown">
+                <button class="dropbtn">
+                <img src="https://t4.ftcdn.net/jpg/05/23/68/09/360_F_523680964_Mt9wSDPzR4lquYAgllGqHeUzhsVhYxiV.jpg" alt="Logo" class="logo">
+                <span class="caret"></span>
+                </button>
+                <div class="dropdown-content">
+                <a href="/profile">Profile</a>
+                <a href="/logout">log out</a>
+            
+                </div>
+            </div>
+            
+        </ul>
+        </div>
+    </nav>
+
+    <div class="dummy"></div>
+    <main>
+        <div class="card-container">
+            <div class="image-contact-container">
+                <div class="profile-image-container">
+                    <div class="profile-image"><img src="data:image/jpeg;base64,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"></div>
+                    <h2 class="name"> <%= user.fullname %></h2>
+                    <h3 class="username"> @<%= user.username %> </h3>
+                    <form action="/logout" meethod="post">
+                        <input type="submit" class="btn int" value="Logout">
+                      </form>
+                </div>
+            </div>
+    </main>
+</body>
+</html>

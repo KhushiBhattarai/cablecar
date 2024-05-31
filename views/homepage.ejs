@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cable Car Booking System</title>
+    <link href="/stylesheets/start.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/table.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/location.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/footer.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/navbar.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="/javascripts/script.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="interactive-map.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+</head>
+
+<nav>
+    <div class="menu">
+<div class="logo">
+        <a href="/"><img src="/images/logo.png" alt="Logo"></a>
+    </div>
+    <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/gallery">Gallery</a></li>
+        <li><a href="/book">Book Now</a></li>
+        <div class="dropdown">
+            <button class="dropbtn">
+            <img src="https://t4.ftcdn.net/jpg/05/23/68/09/360_F_523680964_Mt9wSDPzR4lquYAgllGqHeUzhsVhYxiV.jpg" alt="Logo" class="logo">
+            <span class="caret"></span>
+            </button>
+            <div class="dropdown-content">
+            <a href="/profile">Profile</a>
+            <a href="/logout">log out</a>
+        
+            </div>
+        </div>
+        
+    </ul>
+    </div>
+</nav>
+    <!-- image animation start-->
+<div class="img-animation">
+    <div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide"><img src="/images/1.png" alt=""></div>
+        <div class="swiper-slide"><img src="/images/2.png" alt=""></div>
+        <div class="swiper-slide"><img src="/images/3.png" alt=""></div>
+        <div class="swiper-slide"><img src="images/4.png" alt=""></div>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+    <script>
+    const mySwiper = new Swiper ('.swiper-container', {
+      // Optional parameters
+    autoplay: {
+        delay:2000,
+        disableOnInteraction:false,
+    },
+    loop: true,
+    coverflowEffect: {
+    rotate: 30,
+    slideShadows: true
+    },
+      // If we need pagination
+    pagination: {
+        el: '.swiper-pagination',
+        clickable:true,
+    },
+       // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    })
+</script>
+</div>
+<!-- image animation end-->
+
+<div class="table-rules">
+    <div class="container">
+    <div class="table-container">
+    <table class="styled-table">
+        <thead>
+        <tr>
+            <th>Rates</th>
+            <th>One Way</th>
+            <th>Two Way</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Nepali</td>
+            <td>Rs. 40</td>
+            <td>Rs. 70</td>
+        </tr>
+        <tr>
+            <td>Foreign</td>
+            <td>Rs. 60</td>
+            <td>Rs. 100</td>
+        </tr>
+       
+        </tbody>
+    </table>
+    </div>
+    <div class="rules-container">
+    <div class="rules">
+        <h3>Rules</h3>
+        <ul>
+        <li>Rates are subject to change without prior notice.</li>
+        <li>For Id proof Nepali citizen should  bring citizenship / passport
+            / national-id / license</li>
+        </ul>
+    </div>
+    </div>
+</div>
+</div>
+
+
+
+<!-- location code start -->
+    
+<div >
+    <div class="row ct-u-padding-bottom-40">
+    <div class="col-lg-6 col-lg-push-6 col-md-7 col-md-push-5">
+        <div class="ct-map">
+        <img alt="Map" class="ct-map__image" src="/images/Untitled design.png">
+        <div class="ct-city stone">
+            <button class="ct-city__button" type="button" tabindex="0"><img alt="Map Open Icon" class="ct-plus"
+                src="/images/map-plus.png" data-pin-nopin="true"><img alt="Map Close Icon"
+                class="ct-close" src="/images/map-close.png" data-pin-nopin="true"><span
+                class="ct-city__name">Cable Car Counter</span></button>
+            <div class="ct-popup">
+            <div class="inner">
+                <span class="ct-popup__name">Counter</span>
+                <p class="ct-popup__content">
+                Counter is situated at this position
+                </p>
+            </div>
+            </div>
+        </div>
+
+        <div class="ct-city orlando2">
+            <button class="ct-city__button" type="button" tabindex="0"><img alt="Map Open Icon" class="ct-plus"
+                src="/images/map-plus.png" data-pin-nopin="true"><img alt="Map Close Icon"
+                class="ct-close" src="/images/map-close.png"><span
+                class="ct-city__name">Cable Car</span></button>
+            <div class="ct-popup">
+            <div class="inner">
+                <span class="ct-popup__name">Cable Car </span>
+                <p class="ct-popup__content">
+                Traveling through cable car from this location
+                </p>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-lg-pull-6 col-md-5 col-md-pull-7">
+        <div class="ct-content">
+        <h2 class="ct-section-header text-left">
+            Our Locations<small>Near the pokhara valley</small>
+        </h2>
+        <br>
+        <br>
+        <ul class="list-unstyled">
+            <li>Meet with a help Desk at the counter is available
+            </li>
+            <li>Free parking vehicle outside the counter
+            </li>
+            <li> Contact us: 9816134847</li>
+
+        </ul>
+        <a class="btn btn-motive" href="#" tabindex="0">Call US</a>
+        </div>
+    </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function() {
+    var city, map;
+    map = $('.ct-map');
+    city = map.find('.ct-city');
+    city.each(function() {
+    var button, that;
+    that = $(this);
+    button = that.find('.ct-city__button');
+    return button.on('click', function() {
+        city.not(that).removeClass('active');
+        if (that.hasClass('active')) {
+        that.removeClass('active');
+        return map.removeClass('popup-open');
+        } else {
+        that.addClass('active');
+        return map.addClass('popup-open');
+        }
+    });
+    });
+});
+</script>
+<!-- location code end -->
+
+
+<!-- footer code start -->
+<div class="footer">
+<footer>
+    <div class="footer-content">
+        <h3>Cable Car Booking</h3>
+        <p> It is a website for cable car booking.Here we can book ticket of Cable car</p>
+        <ul class="socials">
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+        </ul>
+    </div>
+    <div class="footer-bottom">
+        <p>copyright &copy; <a href="/home">Cable Car Booking</a>  </p>
+                <div class="footer-menu">
+                <ul class="f-menu">
+                    <li><a class="active" href="/home">Home</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/gallery">Gallery</a></li>
+                </ul>
+                </div>
+    </div>
+
+</footer>
+</div>
+
+<!-- footer code end -->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>

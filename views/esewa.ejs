@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Button</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Click the button below to make a payment</h1>
+        <button id="payButton" data-order='<%- JSON.stringify(order, null, 2) %>'>Pay Now</button>
+    </div>
+    <script>
+        async function initiatePayment() {
+            try {
+                const orderDataString = document.getElementById('payButton').getAttribute('data-order');
+                const orderData = JSON.parse(orderDataString);
+                const orderId = orderData._id;
+                const totalprice = orderData.totalprice;
+
+                const paymentData = { orderId, totalprice };
+
+                const response = await fetch('/initialize-esewa', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(paymentData)
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to initiate payment');
+                }
+
+                const data = await response.json();
+                console.log('Payment initiated successfully:', data);
+
+                if (data.success) {
+                    const form = document.getElementById('esewaForm');
+                    form.amount.value = data.purchasedItemData.totalprice;
+                    form.total_amount.value = data.purchasedItemData.totalprice;
+                    form.transaction_uuid.value = data.purchasedItemData._id;
+                    form.signature.value = data.payment.signature;
+
+                    // Create an object from the form data
+                    const formDataObj = {};
+                    const formData = new FormData(form);
+                    formData.forEach((value, key) => {
+                        formDataObj[key] = value;
+                    });
+
+                    // Log form data in JSON format
+                    console.log('Form data:', JSON.stringify(formDataObj, null, 2));
+
+                    form.submit();
+                } else {
+                    console.error('Payment initiation failed:', data.message);
+                }
+            } catch (error) {
+                console.error('Error initiating payment:', error.message);
+            }
+        }
+
+        document.getElementById('payButton').addEventListener('click', initiatePayment);
+    </script>
+</body>
+</html>

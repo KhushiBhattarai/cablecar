@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESewa Orders</title>
+</head>
+<body>
+    <h1>Latest Order Details</h1>
+    <div id="orderDetails"></div>
+
+    <script>
+        // Fetch data from the backend when the page loads
+        window.onload = async function() {
+            try {
+                const response = await fetch('/dummy');
+                const order = await response.json();
+                
+                if (response.ok) {
+                    // Display order details on the page
+                    document.getElementById('orderDetails').innerHTML = `
+                        <p><strong>Order ID:</strong> ${order._id}</p>
+                        <p><strong>Trip Type:</strong> ${order.triptype}</p>
+                        <p><strong>Number of People:</strong> ${order.numpeople}</p>
+                        <p><strong>Trip Date:</strong> ${order.tripdate}</p>
+                        <p><strong>Total Price:</strong> ${order.totalprice}</p>
+                    `;
+                } else {
+                    console.error('Error:', order.error);
+                }
+            } catch (error) {
+                console.error('Error fetching order details:', error.message);
+            }
+        };
+    </script>
+</body>
+</html>

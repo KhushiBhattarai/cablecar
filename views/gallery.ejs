@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="/stylesheets/gallery.css" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/navbar.css" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/footer.css" rel="stylesheet" type="text/css" />
+<title>Gallery</title>
+</head>
+<body>
+    <div>
+        <nav>
+            <div class="menu">
+        <div class="logo">
+                <a href="/"><img src="/images/logo.png" alt="Logo"></a>
+            </div>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+                <li><a href="/book">Book Now</a></li>
+                <div class="dropdown">
+                    <button class="dropbtn">
+                    <img src="https://t4.ftcdn.net/jpg/05/23/68/09/360_F_523680964_Mt9wSDPzR4lquYAgllGqHeUzhsVhYxiV.jpg" alt="Logo" class="logo">
+                    <span class="caret"></span>
+                    </button>
+                    <div class="dropdown-content">
+                    <a href="/profile">Profile</a>
+                    <a href="/logout">log out</a>
+                
+                    </div>
+                </div>
+                
+            </ul>
+            </div>
+        </nav>
+    </div>
+<!-- Heading Name -->
+<div class="heading">
+    <h1>Image Gallery</h1>
+</div>
+    <!-- Image Gallery section all image in one div -->
+    <div class="gallery">
+    <div class="gallery-item">
+<img src="https://theannapurnaexpress.com/admin/wp-content/uploads/2023/06/Chandragiri-Cable-car.jpg" onclick="openModal('https://theannapurnaexpress.com/admin/wp-content/uploads/2023/06/Chandragiri-Cable-car.jpg') "alt="Image 1">
+    </div>
+    <div class="gallery-item">
+    <img src="/images/1.png" onclick="openModal('/img/1.png')" alt="Image 2">
+    </div>
+    <div class="gallery-item">
+<img src="/images/2.png"onclick="openModal('/img/2.png')" alt="Image 3">
+    </div>
+    <div class="gallery-item">
+<img src="/images/3.png"onclick="openModal('/img/3.png')"alt="Image 4">
+    </div>
+    <div class="gallery-item">
+        <img src="https://www.shivalayaholidays.com/activityImg/KalinchowkCableCar_1649143528.webp"onclick="openModal('https://www.shivalayaholidays.com/activityImg/KalinchowkCableCar_1649143528.webp')" alt="Image 5">
+            </div>
+    <div class="gallery-item">
+    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-s/02/77/e9/c0/teleferico.jpg?w=600&h=-1&s=1"onclick="openModal('https://dynamic-media-cdn.tripadvisor.com/media/photo-s/02/77/e9/c0/teleferico.jpg?w=600&h=-1&s=1')" alt="Image 6">
+    </div>
+    <div class="gallery-item">
+    <img src="https://assets-api.kathmandupost.com/thumb.php?src=https://assets-cdn.kathmandupost.com/uploads/source/news/2022/money/cablecarweb1665667555-1665711569.jpg&w=900&height=601"onclick=" openModal('https://assets-api.kathmandupost.com/thumb.php?src=https://assets-cdn.kathmandupost.com/uploads/source/news/2022/money/cablecarweb1665667555-1665711569.jpg&w=900&height=601')" alt="Image 7">
+    </div>
+    <div class="gallery-item">
+    <img src="https://www.speedynepal.com/public/images/upload/package/slider/kalinchowk-cable-car-speedy1.jpg" onclick="openModal('https://www.speedynepal.com/public/images/upload/package/slider/kalinchowk-cable-car-speedy1.jpg')" alt="Image 8">
+    </div>
+
+</div>
+    <div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
+</div>
+
+
+<div class="footer">
+    <footer>
+        <div class="footer-content">
+            <h3>Cable Car Booking</h3>
+            <p> It is a website for cable car booking.Here we can book ticket of Cable car</p>
+            <ul class="socials">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>copyright &copy; <a href="/home">Cable Car Booking</a>  </p>
+                    <div class="footer-menu">
+                    <ul class="f-menu">
+                        <li><a class="active" href="/home">Home</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/gallery">Gallery</a></li>
+                    </ul>
+                    </div>
+        </div>
+    
+    </footer>
+    </div>
+
+
+
+
+    <script>
+function openModal(imageSrc) {
+var modal = document.getElementById("myModal");
+var modalImg = document.getElementById("modalImage");
+modal.style.display = "block";
+modalImg.src = imageSrc;
+}
+
+function closeModal() {
+var modal = document.getElementById("myModal");
+modal.style.display = "none";
+}
+
+    </script>
+</body>
+</html>

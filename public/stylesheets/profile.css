@@ -1,0 +1,64 @@
+:root {
+    background: url(/images/1.png);
+    --grey: rgb(91, 89, 100);
+  }
+  
+  * {
+      box-sizing: border-box;
+  }
+  
+  body {
+      margin: 0;
+      font-family: Helvetica;
+      background-color: var(--background);
+      user-select: none;
+  }
+  .dummy{
+    margin:200px;
+  }
+  main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+  }
+  p {
+      margin: 0;
+  }
+  
+  .card-container {
+    position:absolute;
+      height: 500px;
+      width: 300px;
+      background: #fff;
+      transition: all .5s;
+  }
+  
+  .image-contact-container {
+      display: relative;
+      height: 100%;
+      transition: all .5s;
+  }
+
+  .profile-image-container {
+      width: 150px;
+      height: 30%;
+      justify-content: center;
+      transform: translateX(50%);
+      transition: all .5s;
+  }
+ 
+  .profile-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      background: #000;
+      border: 5px solid var(--grey);
+      border-radius: 100%;
+      overflow: hidden;
+  }
+  .profile-image img {
+      width: 150px;
+  }

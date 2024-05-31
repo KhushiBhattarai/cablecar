@@ -1,0 +1,104 @@
+.table-rules {
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+.table-container,
+.rules-container {
+    max-width: 600px;
+    margin: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    height: auto;
+}
+
+.table-container:hover,
+.rules-container:hover {
+    transform: scale(1.05);
+}
+
+.table-container {
+    flex: 1;
+}
+
+.rules-container {
+    flex: 1;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.styled-table thead {
+    background-color: #009879;
+    color: #ffffff;
+}
+
+.styled-table th,
+.styled-table td {
+    font-weight: bold;
+    font-size: 18px;
+    padding: 12px 30px;
+    text-align: left;
+    border-bottom: 3px solid black;
+}
+
+.styled-table tbody tr:nth-child(even) {
+    background-color: rgb(240, 240, 240);
+}
+
+.styled-table tbody tr:nth-child(odd) {
+    background-color: white;
+}
+
+.styled-table tbody tr:last-child {
+    border-bottom: 4px solid #143d35;
+}
+
+.rules {
+    border-radius: 5px;
+    background: rgb(34, 193, 195);
+    background: -moz-linear-gradient(120deg, rgba(34, 193, 195, 1) 0%, rgba(215, 228, 232, 1) 45%);
+    background: -webkit-linear-gradient(120deg, rgba(34, 193, 195, 1) 0%, rgba(215, 228, 232, 1) 45%);
+    background: linear-gradient(120deg, rgba(34, 193, 195, 1) 0%, rgba(215, 228, 232, 1) 45%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#22c1c3", endColorstr="#d7e4e8", GradientType=1);
+    padding: 20px;
+    margin-top: 10px;
+    height: auto;
+}
+
+.rules h3 {
+    color: #0d0668;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.rules li {
+    color: #000;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 18.8px;
+}
+
+.rules li::before {
+    content: "\2022";
+    color: #080808;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    font-weight: bold;
+}

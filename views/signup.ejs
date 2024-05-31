@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  <div class="img"><img src="/images/1.png" alt=""></div>
+  <div class="container">
+    <div class="content">
+      <!--pinterest logo-->
+      <img src="https://i.pinimg.com/originals/d3/d1/75/d3d175e560ae133f1ed5cd4ec173751a.png" alt="pin logo" class="img1" />
+      <p class="header"> Register Account to see more</p>
+
+      <% if(error.length > 0){ %>
+        <p class="error"> <%= error %> </p>
+        <% } %>
+
+      <form action="/signup" method="post">
+      <input type="email" name="email" placeholder="Email" class="detail"  required/><br />
+      <input type="text" name="username" placeholder="Username" class="detail" required/><br />
+      <input type="text" name="fullname" placeholder="Full name" class="detail" required/><br/>
+      <input type="text" class="detail"   placeholder="Address" name="address"  required/><br/>
+      <input type="number" class="detail"   placeholder="Phone Number" name="phonenumber"  required/><br/>
+      <select class="detail" name="nationality">
+        <option value="Nepal">Nepal</option>
+        <option value="Foreign">Foreign</option>       
+      </select>
+      <input type="password" name="password" placeholder="Password" class="detail" required/><br/>
+      <input type="submit" class="btn int" value="Register Account">
+      </form>
+
+      
+      <footer>
+        <form action="/login" meethod="post">
+          <input type="submit" class="btn int" value="Login">
+        </form>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
